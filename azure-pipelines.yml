@@ -1,0 +1,23 @@
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo K8
+- task: TerraformCLI@0
+  inputs:
+    command: 'init'
+    backendType: 'azurerm'
+    backendServiceArm: 'Pay-As-You-Go (6be02b24-c8f1-42d4-b513-6fb3ec9500cb)'
+    ensureBackend: true
+    backendAzureRmResourceGroupName: 'terraform-backend-rg'
+    backendAzureRmResourceGroupLocation: 'Centralindia'
+    backendAzureRmStorageAccountName: 'storageaccountsaikat4'
+    backendAzureRmContainerName: 'storageaccountsaikatcontainer'
+    backendAzureRmKey: 'kubernetes-dev.tfstate'
+    allowTelemetryCollection: true
+  displayName: 'Run a one-line script'
+

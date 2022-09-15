@@ -20,4 +20,9 @@ steps:
     backendAzureRmKey: 'kubernetes-dev.tfstate'
     allowTelemetryCollection: true
   displayName: 'Run a one-line script'
-
+  
+- task: TerraformCLI@0
+  inputs:
+    command: 'apply'
+    environmentServiceName: 'Pay-As-You-Go (6be02b24-c8f1-42d4-b513-6fb3ec9500cb)'
+    allowTelemetryCollection: true

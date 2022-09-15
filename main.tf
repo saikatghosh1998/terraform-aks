@@ -43,4 +43,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
     load_balancer_sku = "Standard"
     network_plugin    = "kubenet" 
   }
-}
+  terraform{
+    backend "azurerm"{
+    }
+  }
